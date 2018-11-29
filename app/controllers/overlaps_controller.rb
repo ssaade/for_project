@@ -1,6 +1,6 @@
 class OverlapsController < ApplicationController
   def index
-    @overlaps = Overlap.all
+    @overlaps = Overlap.page(params[:page]).per(10)
 
     render("overlap_templates/index.html.erb")
   end
