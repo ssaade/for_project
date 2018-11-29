@@ -13,17 +13,21 @@
 
       <!-- Edit link availability start -->
       <div class="col">
-        <a href="/availabilities/<%= @availability.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit availability
-        </a>
+        <% if current_user == @availability.user %>
+          <a href="/availabilities/<%= @availability.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit availability
+          </a>
+        <% end %>
       </div>
       <!-- Edit link availability end -->
 
       <!-- Delete link availability start -->
       <div class="col">
-        <a href="/delete_availability/<%= @availability.id %>" class="btn btn-block btn-outline-secondary">
-          Delete availability
-        </a>
+        <% if current_user == @availability.user %>
+          <a href="/delete_availability/<%= @availability.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete availability
+          </a>
+        <% end %>
       </div>
       <!-- Delete link availability end -->
     </div>
