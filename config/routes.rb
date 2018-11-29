@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Overlap resource:
+
+  # CREATE
+  get("/overlaps/new", { :controller => "overlaps", :action => "new_form" })
+  post("/create_overlap", { :controller => "overlaps", :action => "create_row" })
+
+  # READ
+  get("/overlaps", { :controller => "overlaps", :action => "index" })
+  get("/overlaps/:id_to_display", { :controller => "overlaps", :action => "show" })
+
+  # UPDATE
+  get("/overlaps/:prefill_with_id/edit", { :controller => "overlaps", :action => "edit_form" })
+  post("/update_overlap/:id_to_modify", { :controller => "overlaps", :action => "update_row" })
+
+  # DELETE
+  get("/delete_overlap/:id_to_remove", { :controller => "overlaps", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Availability resource:
 
   # CREATE

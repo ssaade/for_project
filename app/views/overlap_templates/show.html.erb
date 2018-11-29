@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Overlap #<%= @overlap.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/overlaps" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link overlap start -->
+      <div class="col">
+        <a href="/overlaps/<%= @overlap.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit overlap
+        </a>
+      </div>
+      <!-- Edit link overlap end -->
+
+      <!-- Delete link overlap start -->
+      <div class="col">
+        <a href="/delete_overlap/<%= @overlap.id %>" class="btn btn-block btn-outline-secondary">
+          Delete overlap
+        </a>
+      </div>
+      <!-- Delete link overlap end -->
+    </div>
+
+    <dl>
+      <dt>
+        Inviter
+      </dt>
+      <!-- Display inviter_id start -->
+      <dd>
+        <%= @overlap.inviter_id %>
+      </dd>
+      <!-- Display inviter_id end -->
+
+      <dt>
+        Invited
+      </dt>
+      <!-- Display invited_id start -->
+      <dd>
+        <%= @overlap.invited_id %>
+      </dd>
+      <!-- Display invited_id end -->
+
+      <dt>
+        Date
+      </dt>
+      <!-- Display date start -->
+      <dd>
+        <%= @overlap.date %>
+      </dd>
+      <!-- Display date end -->
+
+      <dt>
+        Start time
+      </dt>
+      <!-- Display start_time start -->
+      <dd>
+        <%= @overlap.start_time %>
+      </dd>
+      <!-- Display start_time end -->
+
+      <dt>
+        End time
+      </dt>
+      <!-- Display end_time start -->
+      <dd>
+        <%= @overlap.end_time %>
+      </dd>
+      <!-- Display end_time end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@overlap.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@overlap.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
