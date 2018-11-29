@@ -43,7 +43,7 @@ class AvailabilitiesController < ApplicationController
   def update_row
     @availability = Availability.find(params.fetch("id_to_modify"))
 
-    @availability.user_id = params.fetch("user_id")
+    
     @availability.date = params.fetch("date")
     @availability.start_time = params.fetch("start_time")
     @availability.end_time = params.fetch("end_time")
