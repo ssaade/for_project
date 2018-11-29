@@ -1,6 +1,7 @@
 class OverlapsController < ApplicationController
   def index
-    @overlaps = Overlap.page(params[:page]).per(10)
+    @q = Overlap.ransack(params[:q])
+    @overlaps = @q.result(:distinct => true).includes(:firstuser, :seconduser).page(params[:page]).per(10)
 
     render("overlap_templates/index.html.erb")
   end
