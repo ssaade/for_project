@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_overlap/:id_to_remove", { :controller => "overlaps", :action => "destroy_row" })
+  get("/delete_overlap_from_seconduser/:id_to_remove", { :controller => "overlaps", :action => "destroy_row_from_seconduser" })
+  get("/delete_overlap_from_firstuser/:id_to_remove", { :controller => "overlaps", :action => "destroy_row_from_firstuser" })
 
   #------------------------------
 
@@ -37,6 +39,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_availability/:id_to_remove", { :controller => "availabilities", :action => "destroy_row" })
+  get("/delete_availability_from_user/:id_to_remove", { :controller => "availabilities", :action => "destroy_row_from_user" })
 
   #------------------------------
 

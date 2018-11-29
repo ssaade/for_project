@@ -57,6 +57,14 @@ class AvailabilitiesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @availability = Availability.find(params.fetch("id_to_remove"))
+
+    @availability.destroy
+
+    redirect_to("/users/#{@availability.user_id}", notice: "Availability deleted successfully.")
+  end
+
   def destroy_row
     @availability = Availability.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Availabilities
+
+    <a data-toggle="collapse" href="#user_availabilities_new_form">
+      Add availability
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.availabilities.each do |availability| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/availabilities/<%= availability.id %>">
+          <%= availability.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

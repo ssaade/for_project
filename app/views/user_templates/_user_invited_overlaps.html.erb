@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Invited Overlaps
+
+    <a data-toggle="collapse" href="#user_invited_overlaps_new_form">
+      Add overlap
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.invited_overlaps.each do |overlap| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/overlaps/<%= overlap.id %>">
+          <%= overlap.inviter_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

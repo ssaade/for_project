@@ -59,6 +59,22 @@ class OverlapsController < ApplicationController
     end
   end
 
+  def destroy_row_from_firstuser
+    @overlap = Overlap.find(params.fetch("id_to_remove"))
+
+    @overlap.destroy
+
+    redirect_to("/users/#{@overlap.inviter_id}", notice: "Overlap deleted successfully.")
+  end
+
+  def destroy_row_from_seconduser
+    @overlap = Overlap.find(params.fetch("id_to_remove"))
+
+    @overlap.destroy
+
+    redirect_to("/users/#{@overlap.invited_id}", notice: "Overlap deleted successfully.")
+  end
+
   def destroy_row
     @overlap = Overlap.find(params.fetch("id_to_remove"))
 
