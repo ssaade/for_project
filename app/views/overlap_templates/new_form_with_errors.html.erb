@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for invited_id start -->
-    <input type="text" id="invited_id" name="invited_id" class="form-control" value="<%= @overlap.invited_id %>">
+    <%= select_tag(:invited_id, options_from_collection_for_select(User.all, :id, :email, @overlap.invited_id), :class => "form-control") %>
     <!-- Input for invited_id end -->
   </div>
   <!-- Label and input for invited_id end -->
