@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link availability start -->
       <div class="col">
         <% if current_user == @availability.user %>
           <a href="/availabilities/<%= @availability.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link availability end -->
 
-      <!-- Delete link availability start -->
       <div class="col">
         <% if current_user == @availability.user %>
           <a href="/delete_availability/<%= @availability.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link availability end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @availability.user.present? %>
           <a href="/users/<%= @availability.user_id %>">
@@ -44,55 +39,42 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Date
       </dt>
-      <!-- Display date start -->
       <dd>
         <%= @availability.date %>
       </dd>
-      <!-- Display date end -->
 
       <dt>
         Start time
       </dt>
-      <!-- Display start_time start -->
       <dd>
         <%= @availability.start_time %>
       </dd>
-      <!-- Display start_time end -->
 
       <dt>
         End time
       </dt>
-      <!-- Display end_time start -->
       <dd>
         <%= @availability.end_time %>
       </dd>
-      <!-- Display end_time end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@availability.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@availability.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

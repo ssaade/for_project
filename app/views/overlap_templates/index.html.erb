@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "overlap_templates/overlaps_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -66,13 +62,10 @@
 
       <% @overlaps.each do |overlap| %>
       <tr>
-        <!-- Display overlap.id start -->
         <td>
           <%= overlap.id %>
         </td>
-        <!-- Display overlap.id end -->
 
-        <!-- Display overlap.inviter_id start -->
         <td>
           <% if overlap.firstuser.present? %>
             <a href="/users/<%= overlap.firstuser.id %>">
@@ -80,9 +73,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display overlap.inviter_id end -->
 
-        <!-- Display overlap.invited_id start -->
         <td>
           <% if overlap.seconduser.present? %>
             <a href="/users/<%= overlap.seconduser.id %>">
@@ -90,37 +81,26 @@
             </a>
           <% end %>
         </td>
-        <!-- Display overlap.invited_id end -->
 
-        <!-- Display overlap.date start -->
         <td>
           <%= overlap.date %>
         </td>
-        <!-- Display overlap.date end -->
 
-        <!-- Display overlap.start_time start -->
         <td>
           <%= overlap.start_time %>
         </td>
-        <!-- Display overlap.start_time end -->
 
-        <!-- Display overlap.end_time start -->
         <td>
           <%= overlap.end_time %>
         </td>
-        <!-- Display overlap.end_time end -->
 
-        <!-- Display overlap.created_at start -->
         <td>
           <%= time_ago_in_words(overlap.created_at) %> ago
         </td>
-        <!-- Display overlap.created_at end -->
 
-        <!-- Display overlap.updated_at start -->
         <td>
           <%= time_ago_in_words(overlap.updated_at) %> ago
         </td>
-        <!-- Display overlap.updated_at end -->
 
         <td>
           <a href="/overlaps/<%= overlap.id %>">

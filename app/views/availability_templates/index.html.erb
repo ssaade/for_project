@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "availability_templates/availabilities_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @availabilities.each do |availability| %>
       <tr>
-        <!-- Display availability.id start -->
         <td>
           <%= availability.id %>
         </td>
-        <!-- Display availability.id end -->
 
-        <!-- Display availability.user_id start -->
         <td>
           <% if availability.user.present? %>
             <a href="/users/<%= availability.user.id %>">
@@ -76,37 +69,26 @@
             </a>
           <% end %>
         </td>
-        <!-- Display availability.user_id end -->
 
-        <!-- Display availability.date start -->
         <td>
           <%= availability.date %>
         </td>
-        <!-- Display availability.date end -->
 
-        <!-- Display availability.start_time start -->
         <td>
           <%= availability.start_time %>
         </td>
-        <!-- Display availability.start_time end -->
 
-        <!-- Display availability.end_time start -->
         <td>
           <%= availability.end_time %>
         </td>
-        <!-- Display availability.end_time end -->
 
-        <!-- Display availability.created_at start -->
         <td>
           <%= time_ago_in_words(availability.created_at) %> ago
         </td>
-        <!-- Display availability.created_at end -->
 
-        <!-- Display availability.updated_at start -->
         <td>
           <%= time_ago_in_words(availability.updated_at) %> ago
         </td>
-        <!-- Display availability.updated_at end -->
 
         <td>
           <a href="/availabilities/<%= availability.id %>">
