@@ -34,7 +34,11 @@
       </dt>
       <!-- Display inviter_id start -->
       <dd>
-        <%= @overlap.inviter_id %>
+        <% if @overlap.firstuser.present? %>
+          <a href="/users/<%= @overlap.inviter_id %>">
+            <%= @overlap.firstuser.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display inviter_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display invited_id start -->
       <dd>
-        <%= @overlap.invited_id %>
+        <% if @overlap.seconduser.present? %>
+          <a href="/users/<%= @overlap.invited_id %>">
+            <%= @overlap.seconduser.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display invited_id end -->
 

@@ -70,13 +70,21 @@
 
         <!-- Display overlap.inviter_id start -->
         <td>
-          <%= overlap.firstuser.email %>
+          <% if overlap.firstuser.present? %>
+            <a href="/users/<%= overlap.firstuser.id %>">
+              <%= overlap.firstuser.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display overlap.inviter_id end -->
 
         <!-- Display overlap.invited_id start -->
         <td>
-          <%= overlap.seconduser.email %>
+          <% if overlap.seconduser.present? %>
+            <a href="/users/<%= overlap.seconduser.id %>">
+              <%= overlap.seconduser.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display overlap.invited_id end -->
 

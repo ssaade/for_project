@@ -66,7 +66,11 @@
 
         <!-- Display availability.user_id start -->
         <td>
-          <%= availability.user.email %>
+          <% if availability.user.present? %>
+            <a href="/users/<%= availability.user.id %>">
+              <%= availability.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display availability.user_id end -->
 
