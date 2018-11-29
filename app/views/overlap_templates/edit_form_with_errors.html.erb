@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for inviter_id start -->
-    <input type="text" id="inviter_id" name="inviter_id" class="form-control" value="<%= @overlap.inviter_id %>">
+    <%= select_tag(:inviter_id, options_from_collection_for_select(User.all, :id, :email, @overlap.inviter_id), :class => "form-control") %>
     <!-- Input for inviter_id end -->
   </div>
   <!-- Label and input for inviter_id end -->
