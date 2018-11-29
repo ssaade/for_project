@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "availabilities#index"
   # Routes for the Overlap resource:
 
   # CREATE
