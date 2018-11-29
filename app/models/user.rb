@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :inviter_overlaps,
+             :class_name => "Overlap",
+             :foreign_key => "inviter_id",
+             :dependent => :destroy
+
   has_many   :availabilities,
              :dependent => :destroy
 
